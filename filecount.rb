@@ -18,8 +18,8 @@ directories = Array.new
 
 if os == :nix 
   puts "*nix directory|count"
-  # directories = Dir.glob('/'"**/")
-  directories = ['/etc']
+  directories = Dir.glob('/'"**/")
+  # directories = ['/etc']
   directories.sort!
   directories.each do |countycount|
     filecount = Dir.glob(File.join(countycount, '**', '*')).select { |file| File.file?(file) }.count
@@ -27,8 +27,8 @@ if os == :nix
   end
 else
   puts "Windows directory|count"
-  # directories = Dir.glob('C:\'"**/")   
-  directories = ['C:\\']
+  directories = Dir.glob('C:\'"**/")   
+  # directories = ['C:\\']
   directories.sort!
   directories.each do |countycount|
    filecount = Dir.glob(File.join(countycount, '**', '*')).select { |file| File.file?(file) }.count
