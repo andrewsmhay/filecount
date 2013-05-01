@@ -9,10 +9,10 @@ Filecount is a simple script to:
 
 The script has been tested on Windows 2012, Ubuntu 12.04.1, and OS X but should run on any system.
 
-To run the script with the list of directories and counts, simply run:
+To run the script with the list of directories and counts, simply run:<br />
 `./filecount.rb`
 
-To save the pipe '|' delimited output to a file, just redirect to a file on your system:
+To save the pipe '|' delimited output to a file, just redirect to a file on your system:<br />
 `./filecount.rb > filecount.csv`
 
 For any questions, please contact Andrew Hay (http://twitter.com/andrewsmhay)
