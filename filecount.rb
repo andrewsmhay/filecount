@@ -4,7 +4,7 @@ def os
     @os ||= (
       host_os = RbConfig::CONFIG['host_os']
       case host_os
-      when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+      when /mswin|msys|mingw|bccwin|wince/
         :windows
       when /darwin|mac os|linux|solaris|bsd/
         :nix
@@ -19,7 +19,6 @@ directories = Array.new
 if os == :nix 
   puts "*nix directory|count"
   directories = Dir.glob('/'"**/")
-  # directories = ['/etc']
   directories.sort!
   directories.each do |countycount|
     filecount = Dir.glob(File.join(countycount, '**', '*')).select { |file| File.file?(file) }.count
@@ -27,11 +26,10 @@ if os == :nix
   end
 else
   puts "Windows directory|count"
-  directories = Dir.glob('C:\'"**/")   
-  # directories = ['C:\\']
+  directories = Dir.glob("/**/")   
   directories.sort!
   directories.each do |countycount|
-   filecount = Dir.glob(File.join(countycount, '**', '*')).select { |file| File.file?(file) }.count
-   puts "#{countycount}|#{filecount}"
+    filecount = Dir.glob(File.join(countycount, '**', '*')).select { |file| File.file?(file) }.count
+    puts "#{countycount}|#{filecount}"
   end
 end
